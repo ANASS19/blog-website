@@ -1,0 +1,39 @@
+{% extends 'base.html' %}
+
+{% block head %}
+<title>Posts</title> 
+{% endblock %}
+
+{% block body %}
+<br>
+<div>
+    <h1 class="hh" style="display:inline" >Posts</h1>
+    <a style="display:inline" id="bu" class="w3-button w3-deep-purple" href="/posts/new" >+ New Post</a>
+</div>
+<div class="posts">
+    {% for post in posts %}
+        <h2>{{ post.title }}</h2>
+        {% if post.author %}
+            <small> Written by {{ post.author }} on {{ post.date_posted }}</small>
+        {% else %}
+            <small> Written by Unknown on {{ post.date_posted }}</small>
+        {% endif %}
+        <br>
+        <br>
+        <p style="white-space:pre-wrap">{{ post.content }}</p>
+        <br>
+        <a class="w3-button w3-purple" href='/posts/delete/{{post.id}}'>Delete</a>
+        <a class="w3-button w3-indigo" href='/posts/edit/{{post.id}}'>Edit</a>
+        <br>
+        <hr>
+        <br>
+    {% endfor%}
+    
+</div>
+<footer>
+    <p id="demo1">ANASS Web Development, Copyright &copy; 2020</p>
+</footer>
+<script src="/static/js/main.js"></script>
+{% endblock %}
+
+

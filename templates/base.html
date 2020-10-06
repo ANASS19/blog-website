@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/main.css') }}">
+    <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+    
+
+    {% block head %} {% endblock %}
+</head>
+<body>
+  <div>
+      <ul>
+          <li><a href="/">Home</a></li>
+          <li><a href="/posts">Posts</a></li>
+          <li class="dropdown">
+            <a href="javascript:void(0)" class="dropbtn">Contact us</a>
+            <div class="dropdown-content">
+              <a href="https://github.com/ANASS19" target="_blank">GitHub</a>
+              <a href="https://anassox.blogspot.com/" target="_blank">WebSite</a>
+            </div>
+          </li>
+      </ul>
+  </div>
+    {% block body %} 
+    {% endblock %}
+</body>
+</html>
